@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FluentValidation;
 
 namespace Input_control
 {
@@ -23,6 +24,17 @@ namespace Input_control
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        List<Person> people = new List<Person>();
+
+        private void register_click(object sender, RoutedEventArgs e)
+        {
+            string newFirstName = firstNameInput.Text;
+            string newLastName = lastNameInput.Text;
+            DateTime newDate = dateInput.SelectedDate.Value.Date;
+
+            Person newPerson = new Person(newFirstName, newLastName, newDate);
         }
     }
 }
