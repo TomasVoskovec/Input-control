@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Input_control"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -14,17 +14,24 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox x:Name="firstNameInput" Height="50" Margin="25" FontSize="30" VerticalContentAlignment="Center">First Name</TextBox>
+        <Label x:Name="schoolErr" Foreground="Red" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="25,20,0,0" Grid.Row="1" VerticalAlignment="Top" Width="515"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="schoolInput" Height="50" Margin="25,0,0,0" FontSize="30" VerticalContentAlignment="Center" Width="350" HorizontalAlignment="Left">School</TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="classInput" Height="50" Margin="365,0,0,0" FontSize="30" VerticalContentAlignment="Center" Width="150">Class</TextBox>
+
+        <Label x:Name="nameErr" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="25,126,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="Red" Width="515" Grid.RowSpan="2"/>
+        <Label x:Name="lastNameErr" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="25,84,0,0" Grid.Row="2" VerticalAlignment="Top" Foreground="Red" Width="515"/>
+        <Label x:Name="dateErr" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="25,183,0,0" Grid.Row="2" VerticalAlignment="Top" Foreground="Red" Width="515"/>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <TextBox x:Name="firstNameInput" Height="50" Margin="25,10,25,25" FontSize="30" VerticalContentAlignment="Center">First Name</TextBox>
             <TextBox x:Name="lastNameInput" Height="50" Margin="25" FontSize="30" VerticalContentAlignment="Center">Last Name</TextBox>
             <DatePicker x:Name="dateInput" Height="50" Margin="25" FontSize="30" VerticalContentAlignment="Center"></DatePicker>
         </StackPanel>
 
-        <Button Grid.Row="2" Grid.Column="1" Margin="5" Width="200" Content="Register" FontSize="25" Click="register_click"></Button>
-
+        <Button Grid.Row="3" Grid.Column="1" Margin="5" Width="200" Content="Register" FontSize="25" Click="register_click"></Button>
     </Grid>
 </Window>
